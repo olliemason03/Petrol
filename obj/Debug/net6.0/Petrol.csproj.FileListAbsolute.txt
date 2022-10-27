@@ -1,0 +1,15 @@
+K:\Petrol\obj\Debug\net6.0\Petrol.csproj.AssemblyReference.cache
+K:\Petrol\obj\Debug\net6.0\Petrol.GeneratedMSBuildEditorConfig.editorconfig
+K:\Petrol\obj\Debug\net6.0\Petrol.AssemblyInfoInputs.cache
+K:\Petrol\obj\Debug\net6.0\Petrol.AssemblyInfo.cs
+K:\Petrol\obj\Debug\net6.0\Petrol.csproj.CoreCompileInputs.cache
+K:\Petrol\bin\Debug\net6.0\Petrol.exe
+K:\Petrol\bin\Debug\net6.0\Petrol.deps.json
+K:\Petrol\bin\Debug\net6.0\Petrol.runtimeconfig.json
+K:\Petrol\bin\Debug\net6.0\Petrol.dll
+K:\Petrol\bin\Debug\net6.0\Petrol.pdb
+K:\Petrol\obj\Debug\net6.0\Petrol.dll
+K:\Petrol\obj\Debug\net6.0\refint\Petrol.dll
+K:\Petrol\obj\Debug\net6.0\Petrol.pdb
+K:\Petrol\obj\Debug\net6.0\Petrol.genruntimeconfig.cache
+K:\Petrol\obj\Debug\net6.0\ref\Petrol.dll
