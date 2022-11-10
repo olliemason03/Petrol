@@ -11,29 +11,32 @@ class vehicle
 
 
     public List<String> FuelTypeCar = new List<String> {"Diseal","LPG","unleaded"};
-    public String[] FuelTypeVan = new String[] {"Diseal","LPG"};
-    public static String[] type = new String[] {"HGV","Van","Car"};
+    public List<String> FuelTypeVan = new List<String> {"Diseal","LPG"};
+    public static List<String> type = new List<String> {"HGV","Van","Car"};
     
     
     
-    public static void setType()
+    public static string setType()
     {
     
         Random random = new Random();
-        int index = random.Next(type.Length);
+        int index = random.Next(type.Count);
         string StrIndex = type[index];
+        Queue<string> newQ = new Queue<string>();
+        newQ.Enqueue(StrIndex);
+        return Console.ReadLine();
         
     }
     public int getFueltypecar()
     {
         Random rando = new Random();
-        int index1 = rando.Next(FuelTypeCar.Length);
+        int index1 = rando.Next(FuelTypeCar.Count);
         return index1;
     }
     public void setFuelTypeVan()
     {
         Random rand = new Random();
-        int index2 = rand.Next(FuelTypeVan.Length);
+        int index2 = rand.Next(FuelTypeVan.Count);
         
     }
 

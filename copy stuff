@@ -1,0 +1,57 @@
+/*Random rd = new Random();
+    int rand_num = rd.Next(1500,2200);    //timer for when vehicles are created
+
+String[] Vehicle = new String[] {"HGV","Van","Car"};
+Timer myTimer = new Timer(test,null,0,rand_num);
+
+//String[] pumps = new String[]{"pump 1","pump 2","pump 3","pump 4","pump 5","pump 6","pump 7","pump 8","pump 9"};
+int[] pumps = new int[]{1,2,3,4,5,6,7,8,9};
+
+
+void test(object o)
+{
+    Random random = new Random();
+    String[] Vehicle = new String[] {"HGV","Van","Car"};     //array for the types of vehicles
+	String[] FuelType = new String[] {"Unleaded", "Diesel", "LPG"};  //array for what fuel type is created
+	
+	
+
+
+	int index = random.Next(Vehicle.Length);
+	String entry = Vehicle[index]; 
+			if(entry.Equals("Car"))
+			{
+				Random fuel = new Random();
+				  double rand_fuel1 = fuel.Next(0,50);    //rand for how much fuel is in tank depending on size of vehicle
+            	Console.WriteLine(entry +" "+ rand_fuel1+"L");
+
+		
+			}
+			else if(entry.Equals("HGV"))
+			{
+				Random fuel = new Random();
+				  double rand_fuel2 = fuel.Next(0,150);
+  
+				Console.WriteLine(entry +" "+ rand_fuel2+"L");  
+
+			}
+			else if(entry.Equals("Van"))
+			{
+				Random fuel = new Random();
+				  double rand_fuel3 = fuel.Next(0,50);
+				
+
+             
+				Console.WriteLine(entry +" "+ rand_fuel3+"L");
+			}
+			foreach(object obj in entry)
+			{
+				Queue<int> qt = new Queue<int>();
+				qt.Enqueue();
+
+				
+				Console.WriteLine("Current Cars in Queue: "+ qt.Count);
+
+
+			}
+}*/
