@@ -1,29 +1,33 @@
 ﻿
+List<bool> forecourt = new List<bool>();
+
+
 List<car> auto = new List<car>();
+void main()
+{
 
 
-Random rd = new Random();
-    int rand_num = rd.Next(1500,2200);
-Timer myTimer = new Timer(test,null,0,rand_num);
 
+    Thread timer = new Thread(que);
+    timer.Start();
+    que();  
 
-static void test(object o)
-{      
-    
+}
 
-    Queue<string> queues = new Queue<string>{};
+void que()
+{
+    Random rd = new Random();
+    int rand_num = rd.Next(1500, 2200);
+
+    Queue<string> queues = new Queue<string> { };
 
     queues.Enqueue(queue.recievecar());
+
     string look = queues.Peek();
-
-
-
-    
-       
+    Thread.Sleep(rand_num);
+    Console.WriteLine(look);
 }
-Console.WriteLine("pump 1 : " + " pump 4: "  + "pump 7: ");
-Console.WriteLine("pump 2 : " + " pump 5: " + "pump 8: ");
-Console.WriteLine("pump 3 : " + " pump 6: " + "pump 9: ");
+
 
 
 
