@@ -1,4 +1,4 @@
-class vehicle
+public class car
 {
  
     public int fuelamountHGV;
@@ -8,54 +8,56 @@ class vehicle
     public int randfuel;
     public int randfuel2;
 
+    public static string diesel = "diesel";
 
-
-    public List<String> FuelTypeCar = new List<String> {"Diseal","LPG","unleaded"};
-    public List<String> FuelTypeVan = new List<String> {"Diseal","LPG"};
+    public static List<String> FuelTypeCar = new List<String> {"Diesel","LPG","unleaded"};
+    public static List<String> FuelTypeVan = new List<String> {"Diesel","LPG"};
     public static List<String> type = new List<String> {"HGV","Van","Car"};
     
-    
-    
-    public static string setType()
-    {
-    
-        Random random = new Random();
-        int index = random.Next(type.Count);
-        string StrIndex = type[index];
-        Queue<string> newQ = new Queue<string>();
-        newQ.Enqueue(StrIndex);
-        return Console.ReadLine();
+    public car()
+    {   
+
+        
         
     }
-    public int getFueltypecar()
+    
+ 
+    public static string getFueltypeHGV()
+    {
+        return diesel;
+    }
+    public static int getFueltypecar()
     {
         Random rando = new Random();
         int index1 = rando.Next(FuelTypeCar.Count);
         return index1;
     }
-    public void setFuelTypeVan()
+    public static void setFuelTypeVan()
     {
         Random rand = new Random();
         int index2 = rand.Next(FuelTypeVan.Count);
         
     }
 
-    public void setFuelamountCar()
+    public static void setFuelamountCar()
     {
         Random fuelcar = new Random();
-            int randfuel = fuelcar.Next(0,50);
+            int randfuel = fuelcar.Next(3,50);
+        int startcar = randfuel/2;
         
     }
-    public void setFuelamountVan()
+    public static void setFuelamountVan()
     {
         Random fuelVan = new Random();
-            int randfuel2 = fuelVan.Next(0,80);
+            int randfuel2 = fuelVan.Next(3,80);
+        int startvan = randfuel2/2;
         
     }
-    public void setFuelamountHGV()
+    public static void setFuelamountHGV()
     {
         Random fuelHGV = new Random();
-            int randfuel3 = fuelHGV.Next(0,50);
+            int randfuel3 = fuelHGV.Next(3,150);
+            int startHGV = randfuel3/2;
         
     }
 }
