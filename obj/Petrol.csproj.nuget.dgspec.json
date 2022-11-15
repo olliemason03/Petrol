@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "K:\\pertrol\\Petrol\\Petrol.csproj": {}
+    "C:\\Users\\om343\\Petrol-1\\Petrol.csproj": {}
   },
   "projects": {
-    "K:\\pertrol\\Petrol\\Petrol.csproj": {
+    "C:\\Users\\om343\\Petrol-1\\Petrol.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "K:\\pertrol\\Petrol\\Petrol.csproj",
+        "projectUniqueName": "C:\\Users\\om343\\Petrol-1\\Petrol.csproj",
         "projectName": "Petrol",
-        "projectPath": "K:\\pertrol\\Petrol\\Petrol.csproj",
+        "projectPath": "C:\\Users\\om343\\Petrol-1\\Petrol.csproj",
         "packagesPath": "C:\\Users\\om343\\.nuget\\packages\\",
-        "outputPath": "K:\\pertrol\\Petrol\\obj\\",
+        "outputPath": "C:\\Users\\om343\\Petrol-1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

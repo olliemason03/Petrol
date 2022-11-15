@@ -2,7 +2,7 @@ class pumps
 {
     public bool status;
     public string name;
-
+    
     public pumps(bool s, string n)
     {
         this.status = s;
