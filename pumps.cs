@@ -10,11 +10,11 @@ class pumps
 
     }
 
-    string setName()
+    public string getName()
     {
         return name;
     }
-    bool setStatus()
+    public bool getStatus()
     {
         return status;
     }

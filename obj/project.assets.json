@@ -8,23 +8,23 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\om343\\.nuget\\packages\\": {},
+    "C:\\Users\\OM343\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\om343\\Petrol-1\\Petrol.csproj",
+      "projectUniqueName": "K:\\Petrol-2\\Petrol.csproj",
       "projectName": "Petrol",
-      "projectPath": "C:\\Users\\om343\\Petrol-1\\Petrol.csproj",
-      "packagesPath": "C:\\Users\\om343\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\om343\\Petrol-1\\obj\\",
+      "projectPath": "K:\\Petrol-2\\Petrol.csproj",
+      "packagesPath": "C:\\Users\\OM343\\.nuget\\packages\\",
+      "outputPath": "K:\\Petrol-2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\om343\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\OM343\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
