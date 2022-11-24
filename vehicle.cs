@@ -1,6 +1,6 @@
 class vehicle
 {
-    int fuel;
+    int fuel = 0;
     string fuelType;
     string vehicleType;
     
@@ -10,6 +10,7 @@ class vehicle
         this.fuel = f;
         this.fuelType = ft;
         this.vehicleType = vt;
+        
     }
     
     public int Getfuel()
@@ -25,4 +26,5 @@ class vehicle
         return vehicleType;
         
     }
+
 }

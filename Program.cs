@@ -3,8 +3,30 @@ Random randtime = new Random();
 int random = randtime.Next(1500, 2200);
 
 
-Thread service = new Thread(assignpump);
-service.Start();
+
+
+string s = "available";
+string stat = "busy";
+
+List<pumps> laneOne = new List<pumps>();
+for (int i = 0; i < 3; i++)
+{
+    pumps pump1 = new pumps(s);
+    laneOne.Add(pump1);
+}
+List<pumps> laneTwo = new List<pumps>();
+for (int i = 0; i < 3; i++)
+{
+    pumps pump1 = new pumps(s);
+    laneTwo.Add(pump1);
+}
+List<pumps> laneThree = new List<pumps>();
+for (int i = 0; i < 3; i++)
+{
+    pumps pump1 = new pumps(s);
+    laneThree.Add(pump1);
+}
+
 
 
 
@@ -13,11 +35,9 @@ service.Start();
 string[] vehicletype = new string[] { "Car", "Van", "HGV" };
 string[] fueltype = new string[] { "Unleaded", "LPG", "Diesel" };
 
-string[] laneOne = new string[] { "pump 1 ", "pump 4 ", "pump 7" };
-string[] lanetwo = new string[] { "pump 2 ", "pump 5 ", "pump 8" };
-string[] laneThree = new string[] { "pump 3 ", "pump 6 ", "pump 9" };
 
-Queue<vehicle> pumps = new Queue<vehicle>();
+
+
 
 
 
@@ -29,37 +49,124 @@ Random randomf2 = new Random();
 Random randomf3 = new Random();
 Random lanerand = new Random();
 Random newpump = new Random();
-
+Random lane1 = new Random();
+Random lane2 = new Random();
+Random lane3 = new Random();
+string password;
 int queueLim = 5;
-string ft;
+string ft = "";
 int f = 0;
-bool status = true, status4 =true, status7 = true;
-bool status2 = true, status5 = true, status8=true;
-bool status3 = true, status6 = true, status9 = true;
-string l="";
-Thread add = new Thread(AddVehicle);
-add.Start();
 
+Queue<vehicle> pumps = new Queue<vehicle>();
 
-void pumpdisplay()
+void main()
 {
+
+    Console.WriteLine("Welcome to Broken Petrol Ltd.");
+    Console.WriteLine("-----------------------------------------");
+    Console.WriteLine("\n\nplease Login");
+    try
+    {
+        Console.WriteLine("Username: ");
+        string username = Console.ReadLine();
+    }
+    catch
+    {
+        Console.WriteLine("incorrect username");
+    }
+    try
+    {
+        Console.WriteLine("\npassword: ");
+        password = Console.ReadLine();
+
+    }
+    catch
+    {
+        Console.WriteLine("incorrect password...");
+    }
+
     Console.Clear();
-    Console.WriteLine(laneOne[0] + " = " + status + " " + lanetwo[0] + " = " + status4 + " " + laneThree[0] + " = " + status7);
-    Console.WriteLine(laneOne[1] + " = " + status2 + " " + lanetwo[1] + " = " + status5 + " "+ laneThree[1] + " = " + status8);
-    Console.WriteLine(laneOne[2] + " = " + status3 + " " + lanetwo[2] + " = " + status6 + " " + laneThree[2] + " = " + status9);
-    
+
+
+    Thread add = new Thread(AddVehicle);
+    add.Start();
+
+
+
 }
-void AddVehicle(object o)
+main();
+void pumpsNo()
 {
 
+    Console.WriteLine(laneOne[0] + " " + laneOne[0].getStatus() + " " + laneTwo[0] + " " + laneTwo[0].getStatus() + " " + laneThree[0] + " " + laneOne[0].getStatus());
+    Console.WriteLine(laneOne[1] + " " + laneOne[1].getStatus() + " " + laneTwo[1] + " " + laneTwo[0].getStatus() + " " + laneThree[1] + " " + laneOne[0].getStatus());
+    Console.WriteLine(laneOne[2] + " " + laneOne[2].getStatus() + " " + laneTwo[2] + " " + laneTwo[0].getStatus() + " " + laneThree[2] + " " + laneOne[0].getStatus());
+    int lane = newpump.Next(0, 3);
+    int knewpump = newpump.Next(0, 3);
 
-    
+    switch (lane)
+    {
+        case 0:
+            switch (knewpump)
+            {
+                case 0:
+                    laneOne[0].setStatus(stat);
+
+                    break;
+                case 1:
+                    laneOne[1].setStatus(stat);
+
+                    break;
+                case 2:
+                    laneOne[2].setStatus(stat);
+
+                    break;
+            }
+            break;
+        case 1:
+            switch (knewpump)
+            {
+                case 0:
+                    laneTwo[0].setStatus(stat);
+
+                    break;
+                case 1:
+                    laneTwo[1].setStatus(stat);
+
+                    break;
+                case 2:
+                    laneTwo[2].setStatus(stat);
+
+                    break;
+            }
+            break;
+        case 2:
+            switch (knewpump)
+            {
+                case 0:
+                    laneThree[0].setStatus(stat);
+                    break;
+                case 1:
+                    laneThree[1].setStatus(stat);
+
+                    break;
+                case 2:
+                    laneThree[2].setStatus(stat);
+                    break;
+            }
+            break;
 
 
-   
+
+    }
+
+}
+void AddVehicle()
+{
+
     while (pumps.Count <= queueLim)
     {
-        pumpdisplay();
+
 
         if (pumps.Count < queueLim)
         {
@@ -86,106 +193,27 @@ void AddVehicle(object o)
             }
             vehicle v1 = new vehicle(f, ft, vehicletype[Vvalue]);
             Thread.Sleep(random);
-            
+            Console.Clear();
+
             pumps.Enqueue(v1);
             foreach (vehicle v in pumps)
             {
 
                 Console.WriteLine(v.getVehicleType() + " " + v.getFuelType() + " " + v.Getfuel() + "L");
-                
-
 
             }
+
         }
         else if (pumps.Count >= queueLim)
         {
             pumps.Dequeue();
-            
-            assignpump(o);
-
+            pumpsNo();
 
         }
-        
-        
-        
-    }
 
-}
-
-void assignpump(object o)
-{
-
-    int lane = newpump.Next(0, 3);
-
-    if (lane == 0)
-    {
-        l = laneOne[0];
-        if (l == laneOne[0])
-        {
-            status = false;
-            Thread.Sleep(1000);
-            
-            
-        }
-        else if (Thread.Sleep(1000)== true && l == laneOne[0])
-        {
-            l = lanetwo[1];
-            status4 = false;
-        }
-        else if(status == false && l==lanetwo[1])
-        {
-            l= laneOne[2];
-            status5 = false;
-        }
 
 
     }
-    if (lane == 1)
-    {
-        l = lanetwo[0];
-        if (l == lanetwo[0])
-        {
-            status2 = false;
-            
-        }
-        else if (status == false && l == lanetwo[0])
-        {
-            l = lanetwo[1];
-            status5 = false;
-        }
-        else if(status == false && l==lanetwo[1])
-        {
-            l= lanetwo[2];
-            status8 = false;
-        }
-
-
-    }
-    if (lane == 2)
-    {
-        l = laneThree[0];
-        if (l == laneThree[0])
-        {
-            status3 = false;
-            
-        }
-        else if (status == false && l == laneThree[0])
-        {
-            l = laneThree[1];
-            status6 = false;
-        }
-        else if(status == false && l==laneThree[1])
-        {
-            l= laneThree[2];
-            status9 = false;
-        }
-
-
-    }
-
-    
-    pumps pumpz = new pumps(status, l);
-
 
 
 }

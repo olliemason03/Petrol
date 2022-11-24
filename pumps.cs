@@ -1,25 +1,25 @@
 class pumps
 {
-    public bool status;
-    public string name;
+    public string status = "Available";
+
     
-    public pumps(bool s, string n)
+    public pumps(string s)
     {
         this.status = s;
-        this.name = n;
+        
 
     }
 
-    public string getName()
-    {
-        return name;
-    }
-    public bool getStatus()
+
+    public string getStatus()
     {
         return status;
     }
 
-
+    public string setStatus(string s)
+    {
+        this.status = s;
+    }
 
 
 }
