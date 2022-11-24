@@ -127,8 +127,31 @@ void pumpsNo()
 
     int lane = newpump.Next(0, 3);
     int knewpump = lanes.Next(0, 3);
+   
+   switch(lane)
+   {
+    case 0:
 
-    switch (lane)
+    laneOne[knewpump].setStatus("Busy");
+    Thread.Sleep(randomT);
+    laneOne[knewpump].setStatus("AVailable");
+    break;
+
+    case 1:
+
+    laneTwo[knewpump].setStatus(stat);
+    Thread.Sleep(randomT);
+    laneTwo[knewpump].setStatus(s);
+    break;
+
+    case 2:
+
+    laneThree[knewpump].setStatus(stat);
+    Thread.Sleep(randomT);
+    laneThree[knewpump].setStatus(s);
+    break;
+   }
+   /* switch (lane)
     {
         case 0:
             switch (knewpump)
@@ -136,7 +159,6 @@ void pumpsNo()
                 case 0:
                     laneOne[0].setStatus(stat);
                     Thread.Sleep(randomT);
-                    
                     laneOne[0].setStatus(s);
 
                     break;
@@ -207,7 +229,7 @@ void pumpsNo()
 
 
 
-    }
+    }*/
 }
 void AddVehicle()
 {

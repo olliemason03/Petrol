@@ -16,10 +16,10 @@ class pumps
         return status;
     }
 
-    public string setStatus(string st)
+    public void setStatus(string st)
     {
         this.status = st;
-        return st;
+        //return st;
     }
 
 
