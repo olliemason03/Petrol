@@ -16,9 +16,10 @@ class pumps
         return status;
     }
 
-    public string setStatus(string s)
+    public string setStatus(string st)
     {
-        this.status = s;
+        this.status = st;
+        return st;
     }
 
 

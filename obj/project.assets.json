@@ -8,31 +8,24 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\OM343\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\hamme\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "K:\\Petrol-2\\Petrol.csproj",
+      "projectUniqueName": "C:\\Petrol-3\\Petrol.csproj",
       "projectName": "Petrol",
-      "projectPath": "K:\\Petrol-2\\Petrol.csproj",
-      "packagesPath": "C:\\Users\\OM343\\.nuget\\packages\\",
-      "outputPath": "K:\\Petrol-2\\obj\\",
+      "projectPath": "C:\\Petrol-3\\Petrol.csproj",
+      "packagesPath": "C:\\Users\\hamme\\.nuget\\packages\\",
+      "outputPath": "C:\\Petrol-3\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\OM343\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\hamme\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -66,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }
