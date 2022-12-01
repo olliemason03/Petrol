@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Petrol-3\\Petrol.csproj": {}
+    "C:\\Petrol\\Petrol.csproj": {}
   },
   "projects": {
-    "C:\\Petrol-3\\Petrol.csproj": {
+    "C:\\Petrol\\Petrol.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Petrol-3\\Petrol.csproj",
+        "projectUniqueName": "C:\\Petrol\\Petrol.csproj",
         "projectName": "Petrol",
-        "projectPath": "C:\\Petrol-3\\Petrol.csproj",
+        "projectPath": "C:\\Petrol\\Petrol.csproj",
         "packagesPath": "C:\\Users\\hamme\\.nuget\\packages\\",
-        "outputPath": "C:\\Petrol-3\\obj\\",
+        "outputPath": "C:\\Petrol\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hamme\\AppData\\Roaming\\NuGet\\NuGet.Config"

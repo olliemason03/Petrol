@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wLsq1lNWA0N7w72SfLXRuUzppQYiqHHCtQD8pW6Ms0oUnoxXMp4bsFSDNrqOU6RWXlr7V7UQaNTYsKjk5Qk94w==",
+  "dgSpecHash": "A0wriY8wNgMubCFOzDRxTmMTCXu4ZEAvWTABe+qXqbmq7r4zA2ZGRFSf8GosnioFpsgqIsTUH7gHP63nssEVMw==",
   "success": true,
-  "projectFilePath": "C:\\Petrol-3\\Petrol.csproj",
+  "projectFilePath": "C:\\Petrol\\Petrol.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

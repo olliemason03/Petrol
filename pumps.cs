@@ -6,7 +6,7 @@ class pumps
     public pumps(string s)
     {
         this.status = s;
-        
+   
 
     }
 
@@ -21,6 +21,5 @@ class pumps
         this.status = st;
         //return st;
     }
-
 
 }

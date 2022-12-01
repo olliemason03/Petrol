@@ -4,12 +4,16 @@ class vehicle
     string fuelType;
     string vehicleType;
     
+    int amount;
+    double fuelcost;
 
-    public vehicle(int f, string ft, string vt)
+    public vehicle(int f, string ft, string vt,int a,double fc)
     {
         this.fuel = f;
         this.fuelType = ft;
         this.vehicleType = vt;
+        this.amount = a;
+        this.fuelcost = fc;
         
     }
     
@@ -26,5 +30,12 @@ class vehicle
         return vehicleType;
         
     }
-
+    public int GetAmount()
+    {
+        return amount;
+    }
+    public double GetFuelCost()
+    {
+        return fuelcost;
+    }
 }

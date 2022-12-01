@@ -8,6 +8,9 @@ int random = randtime.Next(1500, 2200);
 Random randomtime = new Random();
 int randomT = randomtime.Next(1000, 2000);
 
+Random randomQ = new Random();
+int Queuez = randomQ.Next(5,9);
+
 
 
 
@@ -36,14 +39,11 @@ for (int i = 0; i < 3; i++)
 
 
 
-
-
 string[] vehicletype = new string[] { "Car", "Van", "HGV" };
 string[] fueltype = new string[] { "Unleaded", "LPG", "Diesel" };
 
 
 
-var interval = new System.Timers.Timer(randomT);
 
 
 
@@ -57,183 +57,155 @@ Random lanerand = new Random();
 Random newpump = new Random();
 Random lanes = new Random();
 
-string password = "";
-string username = "";
-int queueLim = 5;
+
+int queueLim = Queuez;
 string ft = "";
 int f = 0;
+int count = 0;
+int amount = 0;
+double fuelcost = 0;
+double countfuel = 0;
+string choice= "";
+
+double countcost = 0;
+double cashierwage = 0;
+
+
+System.Timers.Timer NewTime = new System.Timers.Timer(random);
 
 Queue<vehicle> pumps = new Queue<vehicle>();
 
 void main()
 {
+    setup();
+    NewTime.Elapsed += NewTime_Elapsed;
+    NewTime.Enabled = true;
+    NewTime.AutoReset = true;
+}
+main();
+
+void NewTime_Elapsed(object sender, ElapsedEventArgs e)
+{
+    pumpsNo();
+}
+
+
+void setup()
+{
 
     Console.WriteLine("Welcome to Broken Petrol Ltd.");
     Console.WriteLine("-----------------------------------------");
     Console.WriteLine("\n\nplease Login");
-    Console.WriteLine("USERNAME = 'cashier'");
-    Console.WriteLine("PASSWORD = 'login'");
-    try
+    
+
+    Console.WriteLine("Username: ");
+    string username = Console.ReadLine();
+    if (username.Equals("cashier"))
     {
-        Console.WriteLine("Username: ");
-        string username = Console.ReadLine();
-    }
-    catch
-    {
-        if (username != "cashier")
-        {
-            Console.WriteLine("incorrect username");
-            main();
-        }
-    }
-    try
-    {
+
         Console.WriteLine("password: ");
         string password = Console.ReadLine();
-
-    }
-    catch
-    {
-        if (password != "login")
+        if (password.Equals("login"))
         {
-            Console.WriteLine("incorrect password...");
-            main();
+            Console.Clear();
+
+            Thread add = new Thread(AddVehicle);
+            add.Start();
+            NewTime.Start();
         }
+        else
+        {
+            Console.Clear();
+            Console.WriteLine("Invalid password...Please check");
+            setup();
+
+        }
+
     }
-
-    Console.Clear();
-
-    Thread add = new Thread(AddVehicle);
-    add.Start();
-
-
+    else
+    {
+        Console.Clear();
+        Console.WriteLine("invalid username...please check");
+        setup();
+    }
 
 
 
 
 }
-main();
+
+
+
 void pumpdisplay()
 {
+
+    Console.Clear();
     Console.WriteLine(laneOne[0] + " " + laneOne[0].getStatus() + " " + laneTwo[0] + " " + laneTwo[0].getStatus() + " " + laneThree[0] + " " + laneOne[0].getStatus());
     Console.WriteLine(laneOne[1] + " " + laneOne[1].getStatus() + " " + laneTwo[1] + " " + laneTwo[0].getStatus() + " " + laneThree[1] + " " + laneOne[0].getStatus());
     Console.WriteLine(laneOne[2] + " " + laneOne[2].getStatus() + " " + laneTwo[2] + " " + laneTwo[0].getStatus() + " " + laneThree[2] + " " + laneOne[0].getStatus());
+
+
+
+    Console.WriteLine("\n\nTotal Vehicles Serviced: " + count);
+    Console.WriteLine("\nTotal Fuel sold: £" + countcost);
+    Console.WriteLine("\n1% commission rate: £" + cashierwage);
+    Console.WriteLine("End Shift? y/n");
+    choice = Console.ReadLine();
+    if(choice=="y")
+    {
+        end();
+    }
+
+    
 }
-void pumpsNo()
+void end()
 {
+    Console.WriteLine("total cars serviced today: " + count);
+    Console.WriteLine("Thank you for your services! \n here is your commission:\n " + cashierwage);
 
+    Console.WriteLine("Do you wish to login ?... y/n");
+    string option = Convert.ToString(Console.ReadLine());
+    if (option == "y")
+    {
+        setup();
+    }
+    else
+    {
 
-
-
+    }
+}
+async void pumpsNo()
+{
     int lane = newpump.Next(0, 3);
     int knewpump = lanes.Next(0, 3);
-   
-   switch(lane)
-   {
-    case 0:
 
-    laneOne[knewpump].setStatus("Busy");
-    Thread.Sleep(randomT);
-    laneOne[knewpump].setStatus("AVailable");
-    break;
-
-    case 1:
-
-    laneTwo[knewpump].setStatus(stat);
-    Thread.Sleep(randomT);
-    laneTwo[knewpump].setStatus(s);
-    break;
-
-    case 2:
-
-    laneThree[knewpump].setStatus(stat);
-    Thread.Sleep(randomT);
-    laneThree[knewpump].setStatus(s);
-    break;
-   }
-   /* switch (lane)
+    switch (lane)
     {
         case 0:
-            switch (knewpump)
-            {
-                case 0:
-                    laneOne[0].setStatus(stat);
-                    Thread.Sleep(randomT);
-                    laneOne[0].setStatus(s);
 
-                    break;
-                case 1:
-                    laneOne[1].setStatus(stat);
-                    Thread.Sleep(randomT);
-                    laneOne[1].setStatus(s);
-
-
-                    break;
-                case 2:
-                    laneOne[2].setStatus(stat);
-                    Thread.Sleep(randomT);
-                    laneOne[2].setStatus(s);
-
-
-                    break;
-            }
+            laneOne[knewpump].setStatus(stat);
+            await Task.Delay(randomT);
+            laneOne[knewpump].setStatus(s);
             break;
+
         case 1:
-            switch (knewpump)
-            {
-                case 0:
-                    laneTwo[0].setStatus(stat);
-                    Thread.Sleep(randomT);
-                    laneTwo[0].setStatus(s);
 
-                    break;
-                case 1:
-                    laneTwo[1].setStatus(stat);
-                    Thread.Sleep(randomT);
-                    laneTwo[1].setStatus(s);
-
-
-                    break;
-                case 2:
-                    laneTwo[2].setStatus(stat);
-                    Thread.Sleep(randomT);
-                    laneTwo[2].setStatus(s);
-
-
-                    break;
-            }
+            laneTwo[knewpump].setStatus(stat);
+            await Task.Delay(randomT);
+            laneTwo[knewpump].setStatus(s);
             break;
+
         case 2:
-            switch (knewpump)
-            {
-                case 0:
-                    laneThree[0].setStatus(stat);
-                    Thread.Sleep(randomT);
-                    laneThree[0].setStatus(s);
 
-                    break;
-                case 1:
-                    laneThree[1].setStatus(stat);
-                    Thread.Sleep(randomT);
-                    laneThree[1].setStatus(s);
-
-                    break;
-                case 2:
-                    laneThree[2].setStatus(stat);
-                    Thread.Sleep(randomT);
-                    laneThree[2].setStatus(s);
-
-                    break;
-            }
+            laneThree[knewpump].setStatus(stat);
+            await Task.Delay(randomT);
+            laneThree[knewpump].setStatus(s);
             break;
+    }
 
-
-
-    }*/
 }
 void AddVehicle()
 {
-
     while (pumps.Count <= queueLim)
     {
 
@@ -246,6 +218,20 @@ void AddVehicle()
                 ft = fueltype[fvalue];
                 int randomcarf = (randomf.Next(2, 50)) / 2;
                 f = randomcarf;
+                if (fueltype[fvalue].Equals("Unleaded"))
+                {
+                    fuelcost = (50 - randomcarf) * 0.145;
+                }
+                else if (fueltype[fvalue].Equals("LPG"))
+                {
+                    fuelcost = (50 - randomcarf) * 0.150;
+                }
+                else
+                {
+                    fuelcost = (50 - randomcarf) * 0.172;
+
+                }
+
             }
             else if (vehicletype[Vvalue].Equals("Van"))
             {
@@ -253,39 +239,63 @@ void AddVehicle()
                 ft = fueltype[fvValue];
                 int randomvanf = (randomf2.Next(2, 80)) / 2;
                 f = randomvanf;
+                if (fueltype[fvalue].Equals("LPG"))
+                {
+                    fuelcost = (80 - randomvanf) * 0.150;
+
+                }
+                else
+                {
+                    fuelcost = (80 - randomvanf) * 0.172;
+
+                }
+
             }
             else
             {
                 ft = fueltype[2];
                 int randomHGVf = (randomf3.Next(2, 150)) / 2;
                 f = randomHGVf;
+                fuelcost = (150 - randomHGVf) * 0.172;
+
+
             }
-            vehicle v1 = new vehicle(f, ft, vehicletype[Vvalue]);
+
+            vehicle v1 = new vehicle(f, ft, vehicletype[Vvalue], amount, fuelcost);
             Thread.Sleep(random);
+
             Console.Clear();
 
             pumps.Enqueue(v1);
             foreach (vehicle v in pumps)
             {
+                amount++;
 
                 Console.WriteLine(v.getVehicleType() + " " + v.getFuelType() + " " + v.Getfuel() + "L");
+                count = v.GetAmount();
+                pumpsNo();
+                countfuel = v.GetFuelCost();
+
 
             }
 
         }
         else if (pumps.Count >= queueLim)
         {
-            pumpdisplay();
             pumps.Dequeue();
-            pumpsNo();
+
 
         }
+        pumpdisplay();
 
-
+        for (int i = 0; i <= countfuel; i++)
+        {
+            countcost = countcost + i;
+        }
+        cashierwage = countcost / 100;
 
     }
-    Thread service = new Thread(pumpsNo);
-    service.Start();
+
 
 }
 
